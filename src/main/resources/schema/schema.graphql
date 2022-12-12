@@ -1,0 +1,29 @@
+scalar UUID
+
+type Query {
+    user(
+        input: GetUserInput!
+    ): User
+}
+
+type Mutation {
+    createUser(
+        input: CreateUserInput!
+    ): User
+}
+
+type User {
+    id: UUID!
+    name: String
+    age: Int
+}
+
+input CreateUserInput {
+    name: String
+    age: Int
+}
+
+
+input GetUserInput {
+    id: UUID!
+}
